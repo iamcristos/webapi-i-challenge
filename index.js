@@ -3,8 +3,10 @@ const express = require('express');
 const db = require('./data/db');
 const PORT = 3000;
 const server = express();
+const cors = require('cors');
 
 server.use(express.json())
+server.use(cors());
 
 server.get('/',(req,res)=>{
     res.status(200).json('welcome to user api')
